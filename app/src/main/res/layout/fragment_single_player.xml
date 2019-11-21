@@ -14,13 +14,6 @@
         android:layout_gravity="center"
         android:text="Hello bro how are you"
         />
-    <TextView
-        android:id="@+id/search_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:layout_marginTop="30dp"
-        android:text="Hello how are you "
-        android:layout_gravity="center"/>
+
 
 </FrameLayout>

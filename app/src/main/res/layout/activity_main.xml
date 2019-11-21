@@ -1,15 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+tools:context=".view.PlayersFragment"
+>
+
+<com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/text_input_layout_id"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="30dp"
+    android:layout_marginTop="30dp"
+    android:layout_marginRight="30dp"
+    app:errorEnabled="true"
+    app:errorTextAppearance="@style/error_appearance"
+    style="@style/EditTextHint">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/text_input_edit_text_write_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Write ID"
+        android:inputType="text"
+        android:theme="@style/textInputEditText"
+
+        />
+</com.google.android.material.textfield.TextInputLayout>
+
+<com.google.android.material.button.MaterialButton
+    android:layout_below="@+id/text_input_layout_id"
+    android:layout_centerInParent="true"
+    android:id="@+id/btn_search"
+    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_marginTop="10dp"
+    android:backgroundTint="@color/colorPrimary"
+    android:text="@string/Search"
+    android:textColor="@color/colorWhite"
+    android:textSize="12sp"
+    app:cornerRadius="20dp"
+    app:strokeColor="@color/colorPrimaryDark"
+    tools:ignore="InOrMmUsage"
+    />
+<FrameLayout
+    android:layout_below="@+id/btn_search"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:id="@+id/containerFragment"
+    >
+</FrameLayout>
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/firstFragment"
-        >
-    </FrameLayout>
-
-
-</LinearLayout>
+</RelativeLayout>
