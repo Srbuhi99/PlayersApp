@@ -26,6 +26,7 @@ public class PlayersFragment extends Fragment implements View.OnClickListener {
 
 
     private RecyclerView playersList;
+    private PlayersAdapter playersAdapter;
     Button btnSearch;
     TextInputEditText idValue;
 
@@ -48,6 +49,9 @@ public class PlayersFragment extends Fragment implements View.OnClickListener {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         playersList.setLayoutManager(layoutManager);
         playersList.setHasFixedSize(true);
+
+        playersAdapter = new PlayersAdapter(200);
+        playersList.setAdapter(playersAdapter);
     }
 
     @Override

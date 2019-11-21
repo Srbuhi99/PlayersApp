@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.task.playersapp.R;
+import com.task.playersapp.network.models.AllPayersResponse;
 import com.task.playersapp.network.models.Data;
 import com.task.playersapp.network.apiservice.PlayersApiClient;
 import com.task.playersapp.network.apiservice.PlayersApiService;
@@ -31,21 +32,20 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         fragmentManager = getSupportFragmentManager();
-        apiInterface = PlayersApiClient.getClient().create(PlayersApiService.class);
-//        apiInterface.getAllPayers().enqueue(new Callback<AllPayersResponse>() {
-//            @Override
-//            public void onResponse(Call<AllPayersResponse> call, Response<AllPayersResponse> response) {
-//                for (Data item : response.body().getData()) {
-//                    Log.i("tag", item.getFirst_name());
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<AllPayersResponse> call, Throwable t) {
-//
-//            }
-//        });
-        /*apiInterface.getPlayer(36).enqueue(new Callback<Data>() {
+        /*apiInterface = PlayersApiClient.getClient().create(PlayersApiService.class);
+        apiInterface.getAllPayers(1).enqueue(new Callback<AllPayersResponse>() {
+            @Override
+            public void onResponse(Call<AllPayersResponse> call, Response<AllPayersResponse> response) {
+               for (Data item : response.body().getData()) {
+                    Log.i("tag", item.getFirst_name());
+               }
+           }
+
+            @Override
+           public void onFailure(Call<AllPayersResponse> call, Throwable t) {
+           }
+        });
+        apiInterface.getPlayer(36).enqueue(new Callback<Data>() {
             @Override
             public void onResponse(Call<Data> call, Response<Data> response) {
                 Log.i("tag", response.body().getFirst_name());
