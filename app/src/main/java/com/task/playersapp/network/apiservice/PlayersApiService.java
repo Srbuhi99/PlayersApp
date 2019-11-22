@@ -8,8 +8,8 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface PlayersApiService {
-    @GET("players{page}")
-    Call<AllPayersResponse> getAllPayers(@Path("page") int page);
+    @GET("players")
+    Call<AllPayersResponse> getAllPayers();
 
     @GET("players/{ID}")
     Call<Data> getPlayer(@Path("ID") int id);

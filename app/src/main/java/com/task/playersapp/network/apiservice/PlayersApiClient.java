@@ -21,7 +21,6 @@ public class PlayersApiClient {
                 .client(client)
                 .build();
 
-
         return retrofit;
     }
 }
